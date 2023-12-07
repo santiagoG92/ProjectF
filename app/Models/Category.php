@@ -19,4 +19,8 @@ class Category extends Model
 		{
 			return $this->hasMany(Product::class, 'category_id', 'id');
 		}
+		// public function stock()
+		// {
+		// 	return $this->hasMany(Product::class, 'stock');
+		// }
 }

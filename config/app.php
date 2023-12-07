@@ -4,40 +4,40 @@ use Illuminate\Support\Facades\Facade;
 
 return [
 
-  
+
 
     'name' => env('APP_NAME', 'Laravel'),
 
-  
+
 
     'env' => env('APP_ENV', 'production'),
 
-   
+
     'debug' => (bool) env('APP_DEBUG', false),
 
-   
+
 
     'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL'),
 
-     
+
 
     'timezone' => 'America/Bogota',
 
-     
+
 
     'locale' => 'en',
 
-     
+
 
     'fallback_locale' => 'en',
 
-    
+
 
     'faker_locale' => 'en_US',
 
-     
+
 
     'key' => env('APP_KEY'),
 
@@ -113,6 +113,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 		Spatie\Permission\PermissionServiceProvider::class,
+		Yajra\DataTables\DataTablesServiceProvider::class,
 
     ],
 
