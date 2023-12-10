@@ -1,3 +1,4 @@
+
 {{-- Menu --}}
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
@@ -15,8 +16,20 @@
 
             </ul>
 
+			 <form action="{{ route('search') }}" class="form-inline d-flex form_size" method="GET">
+				<input class="form-control mr-sm-2" type="search" name="term" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-danger ms-2 my-2 my-sm-0" type="submit">Buscar</button>
+			</form>
+
+
+
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('checkout') }}">Carrito <span class="badge bg-danger">{{\Cart::count()}}</span></a>
+
+				</li>
+
                 <!-- Authentication Links -->
                 @guest
                     @if (Route::has('login'))
@@ -38,21 +51,42 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            {{-- @role('admin') --}}
+                            @role('admin')
                                 {{-- Users --}}
-                                {{-- <a class="dropdown-item" href="{{ route('home') }}">Usuarios</a> --}}
+                                <a
+								class="dropdown-item" href="{{ route('users.index') }}">Usuarios
+
+							</a>
+							@endrole
 
                                 {{-- Products --}}
                                 {{-- <a class="dropdown-item" href="{{ route('products') }}">Productos</a> --}}
 
 
                                 {{-- <a class="dropdown-item" href="{{ route('category') }}">Categorias</a> --}}
-                            {{-- @endrole --}}
+                            @role('admin')
+                                {{-- Users --}}
+                                <a class="dropdown-item" href="{{ route('products.index') }}">Productos</a>
+
+                                {{-- Products --}}
+                                {{-- <a class="dropdown-item" href="{{ route('products') }}">Productos</a> --}}
+
+
+                                {{-- <a class="dropdown-item" href="{{ route('category') }}">Categorias</a> --}}
+                            @endrole
+							@can('categories.index')
+
+							{{-- Category Products --}}
+							<a class="dropdown-item" href="{{ route('categories.index') }}">Categorias</a>
+
+							@endcan
 
                             {{-- Logout --}}
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout
-                            </a>
+                             </a>
+
+
 
                             {{-- Category Products --}}
                             {{-- <a class="dropdown-item" href="/category-products/index">Category Products</a> --}}

@@ -10,7 +10,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive my-4 mx-2">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="user_table">
                         <thead>
                             <tr>
                                 <th scope="col">Cedula</th>
@@ -18,8 +18,8 @@
                                 <th scope="col">Apellido</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Direccion</th>
+                                <th scope="col">Roles</th>
                                 <th scope="col">Acciones</th>
-                                {{-- <th scope="col">Roles</th> --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -30,21 +30,28 @@
                                     <th scope="row">{{ $user->last_name }}</th>
                                     <th scope="row">{{ $user->email }}</th>
                                     <th scope="row">{{ $user->address }}</th>
-                                    {{-- <th scope="row">
+                                    <th scope="row">
                                         @foreach ($user->roles as $role)
                                             {{ $role->name }},
                                         @endforeach
-                                    </th> --}}
+                                    </th>
 
                                     <th scope="row">
                                         <div class="d-flex">
                                             <a href="{{ route('users.edit', ['user' => $user->id]) }}"
                                                 class="btn btn-warning btn-sm">Editar</a>
-                                            <form action="{{ route('users.destroy', ['user' => $user->id]) }}"
+
+
+                                             <button class="ms-2 btn btn-danger btn-sm"
+                                                onclick="deleteForm({{ $user->id }})">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+
+                                            <form id="delete_form_{{ $user->id }}"
+                                                action="{{ route('users.destroy', ['user' => $user->id]) }}"
                                                 method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="ms-2 btn btn-danger btn-sm">Eliminar</button>
                                             </form>
                                         </div>
                                     </th>
@@ -56,4 +63,25 @@
             </div>
         </div>
     </section>
+
+	<x-slot:script>
+		<script>
+
+document.addEventListener("DOMContentLoaded", loadDatatable);
+
+function loadDatatable() {
+	$('#user_table').DataTable()
+}
+
+async function deleteForm(user_id) {
+	const response = await Swal.fire({
+		icon: 'warning',
+		title: 'Esta seguro de eliminar?',
+		showCancelButton: true
+	})
+	if (!response.isConfirmed) return
+	document.getElementById(`delete_form_${user_id}`).submit();
+};
+		</script>
+</x-slot:script>
 </x-app>

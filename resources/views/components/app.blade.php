@@ -24,6 +24,14 @@
     {{-- Menu --}}
     <x-menu />
 
+	<main id="app">
+        <div class="container mt-4">
+
+            {{-- <x-alerts /> --}}
+			{{-- <x-category2 /> --}}
+        </div>
+
+
     {{-- Content --}}
     <main id="app">
         <div class="container mt-4">
@@ -33,6 +41,8 @@
 
         {{ $slot }}
     </main>
+
+	{{$script ?? ''}}
 </body>
 
 </html>
