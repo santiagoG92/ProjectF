@@ -9,7 +9,10 @@
 			<div class="transparent-text">
 				VER TODAS..
 			</div>
+
 		</a>
+
+
 		<div id="carouselExample1" class="carousel carousel-dark slide carousel_size">
 			<div class="carousel-inner">
 
@@ -42,13 +45,14 @@
                                                     class="btn btn-primary btn-sm  mr-2"><i
                                                         class="fa-solid fa-eye"></i></a>
 
-                                                <form action="{{ route('add') }}" method="post">
+                                                {{-- <form on action="{{ route('add') }}" method="post">
                                                     @csrf
                                                     <input type="hidden" name="id" value="{{ $product['id'] }}">
                                                     <button type="submit" name="btn"
                                                         class="btn btn-success btn-sm ms-2 justify-content-end">
                                                         <i class="fas fa-cart-shopping"></i>
-                                                </form>
+                                                </form> --}}
+
                                             </div>
                                         </div>
                                     </div>
@@ -123,13 +127,8 @@
                                                     class="btn btn-primary btn-sm  mr-2"><i
                                                         class="fa-solid fa-eye"></i></a>
 
-                                                <form action="{{ route('add') }}" method="post">
-                                                    @csrf
-                                                    <input type="hidden" name="id" value="{{ $product['id'] }}">
-                                                    <button type="submit" name="btn"
-                                                        class="btn btn-success btn-sm ms-2 justify-content-end">
-                                                        <i class="fas fa-cart-shopping"></i>
-                                                </form>
+
+
                                             </div>
                                         </div>
                                     </div>
@@ -195,14 +194,7 @@
                                                     class="btn btn-primary btn-sm  mr-2"><i
                                                         class="fa-solid fa-eye"></i></a>
 
-                                                <form action="{{ route('add') }}" method="post">
-                                                    @csrf
-                                                    <input type="hidden" name="id"
-                                                        value="{{ $product['id'] }}">
-                                                    <button type="submit" name="btn"
-                                                        class="btn btn-success btn-sm ms-2 justify-content-end">
-                                                        <i class="fas fa-cart-shopping"></i>
-                                                </form>
+
                                             </div>
                                         </div>
                                     </div>
@@ -270,14 +262,7 @@
                                                     class="btn btn-primary btn-sm  mr-2"><i
                                                         class="fa-solid fa-eye"></i></a>
 
-                                                <form action="{{ route('add') }}" method="post">
-                                                    @csrf
-                                                    <input type="hidden" name="id"
-                                                        value="{{ $product['id'] }}">
-                                                    <button type="submit" name="btn"
-                                                        class="btn btn-success btn-sm ms-2 justify-content-end">
-                                                        <i class="fas fa-cart-shopping"></i>
-                                                </form>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -301,4 +286,6 @@
         </div>
     </section>
 
+
 </x-app>
+

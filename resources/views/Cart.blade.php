@@ -44,10 +44,13 @@
 
 
 			</table>
+
+
+			<a class="btn btn-secondary btn-sm ms-2 "  href="{{route("clear")}}">Vaciar carrito</a>
 		@else
-			<a href="/">Agrega un producto</a>
+			<a  class="btn btn-secondary btn-sm ms-2"  href="/">Agrega un producto</a>
 		@endif
-		
+
 	</div>
 </section>
 </x-app>

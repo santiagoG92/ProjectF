@@ -29,34 +29,9 @@
 											</div>
 										</div>
 									</div>
-									<!-- Resto del contenido de tu tarjeta -->
 								</div>
 							@endforeach
-        {{-- @foreach ($products_Category1 as $product)
 
-        <div class="card mx-2 my-3  card_size ">
-
-
-			<img src="{{ $product['file']['route'] }}" class="card-img-top"
-												alt="Portada Libro">
-			<h2 class="h5">{{Str::limit( $product['name'],10 )}}</h2>
-			<h2 class="h5">{{ $product['price'] }}</h2>
-			<p>{{Str::limit( $product['description'],40 )}}</p>
-
-
-                </div>
-
-            </div>
-
-
-            <div class="card-footer">
-                <div class="d-grid gap-2">
-                    <button class="btn btn-outline-danger">Solicitar</button>
-                </div>
-            </div>
-        </div>
-
-        @endforeach --}}
     </section>
 </x-app>
 

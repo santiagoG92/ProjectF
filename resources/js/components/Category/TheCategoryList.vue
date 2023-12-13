@@ -61,7 +61,7 @@ export default {
 						searchable: false,
 						render: (data, type, row, meta) => {
 							return `<div class="d-flex justify-content-center" data-role='actions'>
-		            <button onclick='event.preventDefault();' data-id='${row.id}' role='edit' class="btn btn-warning btn-sm">
+		            <button onclick='event.preventDefault();' data-id='${row.id}' role='edit' class="btn btn-secondary btn-sm">
 		              <i class='fas fa-pencil-alt' data-id='${row.id}' role='edit'></i>
 								</button>
 		            <button onclick='event.preventDefault();' data-id='${row.id}' role='delete' class="btn btn-danger btn-sm ms-1">

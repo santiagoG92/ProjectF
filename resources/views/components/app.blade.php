@@ -33,16 +33,22 @@
 
 
     {{-- Content --}}
+	 
     <main id="app">
         <div class="container mt-4">
             <x-alerts />
+
+
 			{{-- <x-category2 /> --}}
+			{{-- <cart-modal></cart-modal> --}}
         </div>
 
         {{ $slot }}
+		{{-- <x-footer /> --}}
     </main>
 
 	{{$script ?? ''}}
+
 </body>
 
 </html>

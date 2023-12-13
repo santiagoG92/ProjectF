@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Cart;
+use Gloudemans\Shoppingcart\Facades\Cart;
 class CartController extends Controller
 {
 
     public function index()
     {
-        //
+		// $products = Product::with( 'category','file')->get();
+		return view('cart.index');
     }
     public function add(Request $request)
     {
@@ -41,6 +42,14 @@ class CartController extends Controller
     {
         Cart::remove($request->rowId);
 		return redirect()->back()->with("success","Eliminado!");
+    }
+
+
+    public function clear()
+
+    {
+        Cart::destroy();
+		return redirect()->back()->with("success","carrito vacio");
     }
 
 

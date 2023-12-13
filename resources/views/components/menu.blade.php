@@ -24,11 +24,14 @@
 
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ms-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="{{ route('checkout') }}">Carrito <span class="badge bg-danger">{{\Cart::count()}}</span></a>
 
-				</li>
+
+				<ul class="navbar-nav ms-auto">
+					{{-- <li class="nav-item">
+						<a class="nav-link" href="{{ route('checkout') }}">Carrito </i><span class="badge bg-danger">{{\Cart::count()}}</span></a>
+
+					</li> --}}
+
 
                 <!-- Authentication Links -->
                 @guest
@@ -59,20 +62,17 @@
 							</a>
 							@endrole
 
-                                {{-- Products --}}
-                                {{-- <a class="dropdown-item" href="{{ route('products') }}">Productos</a> --}}
 
+                            {{-- @role('admin')
 
-                                {{-- <a class="dropdown-item" href="{{ route('category') }}">Categorias</a> --}}
-                            @role('admin')
+								 <a href="{{route('cart.index')}}">cart</a>
+
+							@endrole --}}
+
+                             @role('admin')
                                 {{-- Users --}}
                                 <a class="dropdown-item" href="{{ route('products.index') }}">Productos</a>
 
-                                {{-- Products --}}
-                                {{-- <a class="dropdown-item" href="{{ route('products') }}">Productos</a> --}}
-
-
-                                {{-- <a class="dropdown-item" href="{{ route('category') }}">Categorias</a> --}}
                             @endrole
 							@can('categories.index')
 
@@ -81,9 +81,12 @@
 
 							@endcan
 
+								<a class="dropdown-item" href="{{route('cart.index')}}" >Carrito De compras</a>
+
+
                             {{-- Logout --}}
                             <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Salir
                              </a>
 
 

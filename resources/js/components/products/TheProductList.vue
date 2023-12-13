@@ -24,8 +24,8 @@
 								<td>{{product.category.name}}</td>
 								<td>
 									<div class="d-flex justify-content-center" title="Editar">
-										<button type="button" class="btn btn-warning btn-sm" @click="editProduct(product)">
-											<i class="fas fa-pencil-alt"></i>
+										<button type="button" class="btn btn-secondary btn-sm" @click="editProduct(product)">
+											<i  class="fa-solid fa-pen-to-square"></i>
 										</button>
 										<button type="button" class="btn btn-danger btn-sm ms-2" title="Eliminar"
 											@click="deletProduct(product)">

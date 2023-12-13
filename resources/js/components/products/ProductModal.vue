@@ -6,8 +6,9 @@
 		data-bs-keyboard="false"
 		tabindex="-1"
 		aria-labelledby="staticBackdropLabel"
-		aria-hidden="true"
-	>
+		aria-hidden="true">
+
+		
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -178,22 +179,7 @@
 								this.image_preview =URL.createObjectURL(this.file)
 
 							},
-			// 	async saveProduct() {
-			// 	try {
-			// 		this.product.category_id = this.category
-			// 		const product = this.createFormData (this.product)
-			// 		if (this.is_create) await axios.post('/products/store', product)
 
-			// 		else await axios.post(`/products/update/${this.product.id}`, product)
-
-
-			// 		await successMessage({reload:true})
-			// 		// window.location.reload()
-			// 	} catch (error) {
-			// 		// this.back_errors = await handlerErrors(error)
-			// 		console.error(error)
-			// 	}
-			// },
 async saveProduct() {
     try {
         this.product.category_id = this.category;

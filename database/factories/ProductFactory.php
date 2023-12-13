@@ -11,14 +11,7 @@ class ProductFactory extends Factory
 {
 	protected $model= Product::class;
 
-	// public function categoryId($category)
-	// {
- 	// return $this->state([
-	//  'category_id'=> $category->id
-
- 	// ]);
-
-	// }
+	
 
 	 public function definition()
 	 {
@@ -36,6 +29,6 @@ class ProductFactory extends Factory
 			$file = new File(['route' => '/storage/images/products/default.png']);
 			$product->file()->save($file);
 		});
-		
+
 	}
 }
