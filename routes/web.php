@@ -9,7 +9,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 
-Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 
 // Barra de busqueda pa
 Route::get('/search', [ProductController::class, 'search'])->name('search');
@@ -59,7 +58,11 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::delete('/{category}',  'destroy')->name('categories.destroy')->middleware('can:categories.destroy');
 	});
 
-// Rutas del carrito
+	// Rutas del carrito
+	Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+
+
+	
 	Route::post('cart/add', [CartController::class, 'add'])->name('add');
 	Route::get('cart/checkout', [CartController::class, 'checkout'])->name('checkout');
 	Route::get('cart/clear', [CartController::class, 'clear'])->name('clear');

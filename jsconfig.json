@@ -5,7 +5,7 @@
 	},
 	"include": [
 		"resources/js"
-, "resources/views/components/funcion.js"	],
+, "resources/views/products/funcion.js"	],
 	"extensions": [
 		".vue"
 	],

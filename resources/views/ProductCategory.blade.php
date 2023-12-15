@@ -20,12 +20,7 @@
 												<a href="{{ route('products.showPublic', ['product' => $product['id']]) }}"
 													class="btn btn-primary btn-sm  mr-2"><i class="fa-solid fa-eye"></i></a>
 
-												<form action="{{ route('add') }}" method="post">
-													@csrf
-													<input type="hidden" name="id" value="{{ $product['id'] }}">
-													<button type="submit" name="btn" class="btn btn-success btn-sm ms-2 justify-content-end">
-														<i class="fas fa-cart-shopping"></i>
-												</form>
+
 											</div>
 										</div>
 									</div>

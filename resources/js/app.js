@@ -10,12 +10,15 @@ import TheCartList from './components/ShoppingCart/TheCartList.vue'
 
 import BackendError from './components/Components/BackendError.vue'
 
+
+
+
 const app = createApp({
 	components: {
 		TheProductList,
 		TheCategoryList,
 		TheCartList,
-		// CartModal
+
 	}
 })
 

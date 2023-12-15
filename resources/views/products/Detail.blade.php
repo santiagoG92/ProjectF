@@ -1,4 +1,8 @@
-@include('components.funcion')
+@include('components.LocalStorage')
+{{-- @include('resource.js.') --}}
+
+
+
 
 
 
@@ -18,23 +22,28 @@
                         <div>
                             <div class="mx-3 my-3 cardDetails">
                                 <h3 class="card-title">{{ $product->name }}</h3>
-								<tr>
+                                <tr>
 
 
-									<td class="card-text"><strong>precio:</strong> ${{ $product->price }}</td>
-									<td class="card-text"><strong>Descripción:</strong> {{ $product->description }}</td>
-									<td class="card-text"><strong>Stock:</strong> {{ $product->stock }}</td>
+                                    <td class="card-text"><strong>precio:</strong> ${{ $product->price }}</td>
+                                    <td class="card-text"><strong>Descripción:</strong> {{ $product->description }}</td>
+                                    <td class="card-text"><strong>Stock:</strong> {{ $product->stock }}</td>
 
 
-								</tr>
+                                </tr>
+                                <div class="d-flex justify-content-end my-4">
 
-								@auth
-									<form id="addLocalForm">
-										@csrf
-										<input type="hidden" name="id" value="{{ $product['id'] }}">
-										<button type="button" onclick="addLocal()" class="btn btn-success ms-2 justify-content-end">Añadir al Carrito de Compras</button>
-									</form>
-								@endauth
+                                    @auth
+                                        <form id="addLocalForm">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $product['id'] }}">
+                                            <button type="button" onclick="addLocal()"
+                                                class="btn btn-success ms-2 justify-content-end">Añadir al Carrito de
+                                                Compras</button>
+                                        </form>
+                                    @endauth
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -44,4 +53,3 @@
     </section>
 
 </x-app>
-

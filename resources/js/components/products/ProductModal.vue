@@ -8,7 +8,7 @@
 		aria-labelledby="staticBackdropLabel"
 		aria-hidden="true">
 
-		
+
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -113,7 +113,7 @@
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 						<button type="sumbit" class="btn btn-primary">Almacenar</button>
 					</div>
-.				</Form>
+					</Form>
 			</div>
 		</div>
 	</div>
